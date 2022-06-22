@@ -5,8 +5,12 @@
       "samplingSettings": {
         "isEnabled": true,
         "excludedTypes": "Request",
-        "enableDependencyTracking": true
-
+        "enableDependencyTracking": true,
+        "httpAutoCollectionOptions": {
+          "enableHttpTriggerExtendedInfoCollection": true,
+          "enableW3CDistributedTracing": true,
+          "enableResponseHeaderInjection": true
+      },
       }
     }
   },
