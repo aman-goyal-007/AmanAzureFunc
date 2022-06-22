@@ -14,7 +14,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     };
     console.log("Richa");
     axios
-  .get('https://example.com/todos')
+  .get('https://gorest.co.in/public/v2/users/3154/posts')
   .then(res => {
     console.log(`statusCode: ${res.status}`);
     console.log(res);
