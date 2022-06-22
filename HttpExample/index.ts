@@ -1,4 +1,7 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
+import express from 'express';
+var router = express.Router();
+import request from 'request';
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     context.log('HTTP trigger function processed a request.');
@@ -12,7 +15,16 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         body: responseMessage
     };
     console.log("Richa");
-
+    router.get('/', function(req, res, next) {
+        request({
+          uri: 'http://www.giantbomb.com/api/search',
+          qs: {
+            api_key: '123456',
+            query: 'World of Warcraft: Legion'
+          }
+        }).pipe(res);
+      });
+      
 };
 
 export default httpTrigger;
